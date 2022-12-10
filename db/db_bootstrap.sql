@@ -97,9 +97,9 @@ CREATE TABLE Recipe (
     TimeToCook INT,
     Rating DECIMAL,
     Servings DECIMAL,
-    NutrionalValue CHAR(30),
+    NutritionalValue CHAR(30),
     CONSTRAINT fk_4
-        FOREIGN KEY (NutrionalValue) REFERENCES Macros (RecipeNutrition)
+        FOREIGN KEY (NutritionalValue) REFERENCES Macros (RecipeNutrition)
 );
 
 -- Put your DDL
@@ -194,7 +194,7 @@ INSERT INTO FoodGroup
 
 -- Add sample data
 INSERT INTO Recipe
-    (RecipeID, RecipeName, DifficultyLevel, Price, TimeToCook, Rating, Servings, NutrionalValue)
+    (RecipeID, RecipeName, DifficultyLevel, Price, TimeToCook, Rating, Servings, NutritionalValue)
     VALUES
     (1233, 'Pasta', 1, 45.22, 600, 5, 12, '45 calories 80g protein');
 
@@ -209,7 +209,6 @@ INSERT INTO Favorites
     (UserID, RecipeID)
     VALUES
     (1361, 434344);
-
 
 -- Add sample data
 INSERT INTO User
