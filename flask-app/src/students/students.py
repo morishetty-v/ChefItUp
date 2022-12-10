@@ -7,9 +7,9 @@ students = Blueprint('recipes', __name__)
 
 # Get all recipes from the DB
 @students.route('/recipes', methods=['GET'])
-def get_student():
+def get_recipes():
     cursor = db.get_db().cursor()
-    cursor.execute('select RecipeName, DifficultyLevel, Price, TimeToCook, Rating, Servings, NutritionalValue from customers')
+    cursor.execute('select RecipeName, DifficultyLevel, Price, TimeToCook, Rating, Servings, NutritionalValue from Recipe')
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -20,9 +20,13 @@ def get_student():
     the_response.mimetype = 'application/json'
     return the_response
 
+@students.route('/recs')
+def get_recs():
+    return ('<h1>Fuck you!!</h1>')
+
 # Get recipes ordered by DifficultyLevel
 @students.route('/recipes/DifficultyLevel', methods=['GET'])
-def get_student():
+def get_difficulty():
     cursor = db.get_db().cursor()
     cursor.execute('select * from Recipe order by DifficultyLevel')
     row_headers = [x[0] for x in cursor.description]
@@ -37,7 +41,7 @@ def get_student():
 
 # Get recipes within a budget
 @students.route('/recipes/budget/<studentID>', methods=['GET'])
-def get_student(studentID,):
+def get_budget(studentID,):
     student_cursor = db.get_db().cursor()
     student_cursor.execute('select StudentID from Student where StudentID <= {studentID}')
     #student_row_headers = [x[0] for x in student_cursor.description]
@@ -58,7 +62,7 @@ def get_student(studentID,):
 
 # Get recipes under a certain time to cook
 @students.route('/recipes/<max_time>', methods=['GET'])
-def get_students(max_time):
+def get_time(max_time):
     cursor = db.get_db().cursor()
     cursor.execute('select * from Recipe where TimeToCook <= {max_time}')
     row_headers = [x[0] for x in cursor.description]

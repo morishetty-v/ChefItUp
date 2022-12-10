@@ -100,7 +100,7 @@ CREATE TABLE Recipe (
     NutritionalValue CHAR(30),
     CONSTRAINT fk_4
         FOREIGN KEY (NutritionalValue) REFERENCES Macros (RecipeNutrition)
-);
+); ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Put your DDL
 CREATE TABLE DietaryRestrictions (
