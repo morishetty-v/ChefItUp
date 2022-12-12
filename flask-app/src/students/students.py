@@ -3,13 +3,13 @@ import json
 from src import db
 
 
-students = Blueprint('recipes', __name__)
+students = Blueprint('students', __name__)
 
 # Get all recipes from the DB
-@students.route('/recipes', methods=['GET'])
+@students.route('/students', methods=['GET'])
 def get_recipes():
     cursor = db.get_db().cursor()
-    cursor.execute('select RecipeName, DifficultyLevel, Price, TimeToCook, Rating, Servings, NutritionalValue from Recipe')
+    cursor.execute('select * from Recipe')
     row_headers = [x[0] for x in cursor.description]
     json_data = []
     theData = cursor.fetchall()
@@ -41,7 +41,7 @@ def get_difficulty():
 
 # Get recipes within a budget
 @students.route('/recipes/budget/<studentID>', methods=['GET'])
-def get_budget(studentID,):
+def get_budget(studentID):
     student_cursor = db.get_db().cursor()
     student_cursor.execute('select StudentID from Student where StudentID <= {studentID}')
     #student_row_headers = [x[0] for x in student_cursor.description]

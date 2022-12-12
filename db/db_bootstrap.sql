@@ -16,10 +16,11 @@ USE CHEF_IT_UP;
 CREATE TABLE Athlete (
     BMI DECIMAL,
     Sport CHAR(30),
-    PRIMARY KEY MacroGoals TEXT,
+    MacroGoals TEXT,
     [Weight] INT,
     Height INT,
-    BodyFat DECIMAL
+    BodyFat DECIMAL,
+    PRIMARY KEY AthleteID INT
 );
 
 CREATE TABLE Macros (
@@ -30,9 +31,12 @@ CREATE TABLE Macros (
     RecipeName TEXT,
     AthleteGoals TEXT,
     RecipeNutrition TEXT,
-    PRIMARY KEY (RecipeNutrition, AthleteGoals),
+    AthleteID INT,
+    PRIMARY KEY (AthleteID< AthleteGoals),
     CONSTRAINT fk_1
-        FOREIGN KEY (AthleteGoals) REFERENCES Athlete (MacroGoals)
+        FOREIGN KEY (AthleteGoals) REFERENCES Athlete (MacroGoals),
+    CONSTRAINT fk_9
+        FOREIGN KEY (AthleteID) REFERENCES Athlete (AthleteID)
 );
 
 -- Put your DDL
