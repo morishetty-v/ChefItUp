@@ -23,3 +23,23 @@ This repo contains a boilerplate setup for spinning up 2 docker containers:
 
 
 
+
+Chef Pages UI 
+
+<img width="1408" alt="Screen Shot 2022-12-13 at 9 18 39 PM" src="https://user-images.githubusercontent.com/120275888/207489413-7a4b5c0b-83dd-4b59-91cf-994551bb7c66.png">
+
+
+Athlete Pages UI
+
+<img width="1408" alt="Screen Shot 2022-12-13 at 9 18 48 PM" src="https://user-images.githubusercontent.com/120275888/207489608-7c0e27b3-6d1b-454f-8949-02078a4b098c.png">
+
+Student Pages UI
+
+<img width="1408" alt="Screen Shot 2022-12-13 at 9 19 11 PM" src="https://user-images.githubusercontent.com/120275888/207489663-ddc43333-034e-4de2-b2b9-0ddb0c310639.png">
+
+<img width="1408" alt="Screen Shot 2022-12-13 at 9 19 21 PM" src="https://user-images.githubusercontent.com/120275888/207489680-5fe98d3b-46b7-4873-af0d-4640a971b290.png">
+
+
+User UI
+
+<img width="618" alt="Screen Shot 2022-12-13 at 9 19 39 PM" src="https://user-images.githubusercontent.com/120275888/207489703-2a07dc54-af80-4819-ab61-699807e707a7.png">
