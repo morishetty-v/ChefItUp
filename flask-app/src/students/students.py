@@ -20,10 +20,6 @@ def get_recipes():
     the_response.mimetype = 'application/json'
     return the_response
 
-@students.route('/recs')
-def get_recs():
-    return ('<h1>Fuck you!!</h1>')
-
 # Get recipes ordered by DifficultyLevel
 @students.route('/recipes/DifficultyLevel', methods=['GET'])
 def get_difficulty():
@@ -44,7 +40,6 @@ def get_difficulty():
 def get_budget(studentID):
     student_cursor = db.get_db().cursor()
     student_cursor.execute('select StudentID from Student where StudentID <= {studentID}')
-    #student_row_headers = [x[0] for x in student_cursor.description]
     theStudentData = student_cursor.fetchall()
     budget = theStudentData[0]
 

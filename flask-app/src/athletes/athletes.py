@@ -25,7 +25,6 @@ def get_athletes():
 def get_by_calories(athleteID):
     athlete_cursor = db.get_db().cursor()
     athlete_cursor.execute('select Calories from Athlete where AthleteID <= {athleteID}')
-    #student_row_headers = [x[0] for x in student_cursor.description]
     theAthleteData = athlete_cursor.fetchall()
     calories = theAthleteData[0]
     

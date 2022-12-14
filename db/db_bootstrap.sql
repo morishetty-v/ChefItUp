@@ -2,11 +2,11 @@ CREATE DATABASE CHEF_IT_UP;
 CREATE USER 'chef'@'%' IDENTIFIED BY 'chef123';
 CREATE USER 'student'@'%' IDENTIFIED BY 'student123';
 CREATE USER 'athlete'@'%' IDENTIFIED BY 'athlete123';
-CREATE USER 'user'@'%' IDENTIFIED BY 'user123'
+CREATE USER 'sudo_user'@'%' IDENTIFIED BY 'user123';
 GRANT CREATE,ALTER,DROP,INSERT,UPDATE,DELETE ON CHEF_IT_UP.* TO 'chef'@'%';
 GRANT SELECT ON CHEF_IT_UP.* TO 'student'@'%';
 GRANT SELECT ON CHEF_IT_UP.* TO 'athlete'@'%';
-GRANT ALL PRIVILEGES ON CHEF_IT_UP.* TO 'user'@'%'
+GRANT ALL PRIVILEGES ON CHEF_IT_UP.* TO 'sudo_user'@'%';
 FLUSH PRIVILEGES;
 
 -- Move into the database we just created
@@ -94,7 +94,7 @@ CREATE TABLE FoodGroup (
 
 -- Put your DDL
 CREATE TABLE Recipe (
-    PRIMARY KEY RecipeID INT
+    PRIMARY KEY RecipeID INT,
     RecipeName CHAR(30),
     DifficultyLevel DECIMAL,
     Price DECIMAL,
@@ -104,7 +104,7 @@ CREATE TABLE Recipe (
     NutritionalValue CHAR(30),
     CONSTRAINT fk_4
         FOREIGN KEY (NutritionalValue) REFERENCES Macros (RecipeNutrition)
-); ENGINE=InnoDB DEFAULT CHARSET=latin1;
+); 
 
 -- Put your DDL
 CREATE TABLE DietaryRestrictions (
@@ -156,15 +156,15 @@ CREATE TABLE Review (
 
 -- Add sample data
 INSERT INTO Athlete
-    (BMI,Sport,MacroGoals,[Weight],Height,BodyFat)
+    (AthleteID,BMI,Sport,MacroGoals,[Weight],Height,BodyFat)
     VALUES
-    (24, 'Track', '450 Calories 50g protein',  156, 75, 23.1);
+    (00000, 24, 'Track', '450 Calories 50g protein',  156, 75, 23.1);
 
 -- Add sample data
 INSERT INTO Macros
-    (Calories,Carbs,Fat,Protein,RecipeName,AthleteGoals, RecipeNutrition)
+    (AthleteID, Calories,Carbs,Fat,Protein,RecipeName,AthleteGoals, RecipeNutrition)
     VALUES
-    (2400, 54, 34,  156, "Salad", '3404 calories 19g carbs', 'Salad Recipe');
+    (00000, 2400, 54, 34,  156, "Salad", '3404 calories 19g carbs', 'Salad Recipe');
 
 -- Add sample data
 INSERT INTO Chef

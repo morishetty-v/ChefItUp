@@ -15,7 +15,7 @@ def create_app():
     app.config['SECRET_KEY'] = 'someCrazyS3cR3T!Key.!'
 
     # these are for the DB object to be able to connect to MySQL. 
-    app.config['MYSQL_DATABASE_USER'] = 'user'
+    app.config['MYSQL_DATABASE_USER'] = 'sudo_user'
     app.config['MYSQL_DATABASE_PASSWORD'] = open('/secrets/db_password.txt').readline()
     app.config['MYSQL_DATABASE_HOST'] = 'db'
     app.config['MYSQL_DATABASE_PORT'] = 3306
@@ -32,8 +32,8 @@ def create_app():
 
     # Register the routes that we just imported so they can be properly handled
     app.register_blueprint(views,       url_prefix='/classic')
-    app.register_blueprint(chef)
-    app.register_blueprint(students)
-    app.register_blueprint(athletes)
+    app.register_blueprint(chef,       url_prefix='/classic')
+    app.register_blueprint(students,       url_prefix='/classic')
+    app.register_blueprint(athletes,       url_prefix='/classic')
 
     return app
