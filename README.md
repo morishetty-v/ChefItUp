@@ -43,3 +43,7 @@ Student Pages UI
 User UI
 
 <img width="618" alt="Screen Shot 2022-12-13 at 9 19 39 PM" src="https://user-images.githubusercontent.com/120275888/207489703-2a07dc54-af80-4819-ab61-699807e707a7.png">
+
+Presentation 
+
+https://drive.google.com/file/d/1hKKR7puUyozVjT5wY6-YVMj7bAebcDQj/view?usp=share_link 
