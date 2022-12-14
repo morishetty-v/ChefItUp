@@ -23,3 +23,7 @@ This repo contains a boilerplate setup for spinning up 2 docker containers:
 
 
 
+
+UI Screenshots
+
+<img width="1408" alt="Screen Shot 2022-12-13 at 9 18 39 PM" src="https://user-images.githubusercontent.com/120275888/207489413-7a4b5c0b-83dd-4b59-91cf-994551bb7c66.png">
